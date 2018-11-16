@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+      <div class="cols-md-offset-2 cols-md-10">
+        <div class="panel panel-primary">
+          <div class="panel-heading" style="text-align:center;">
+           User Data          
+          </div>
+          <div class="table-responsive">
+          <div class="panel-body">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                      <th (click)="sortFullname()">Full Name</th>
+                      <th>Email</th>
+                      <th>Address</th>
+                      <th>Phone Number</th>
+                      <th>Company Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">  
+                      <td>{{user.name}}</td>
+                      <td>{{user.email}}</td>
+                      <td>{{user.address.street}} {{user.address.suite}} {{user.address.city}} {{user.address.zipcode|slice:0:5}}</td>
+                      <td>{{user.phone}}</td>
+                      <td>{{user.company.name|uppercase}}</td>
+                    </tr>
+                </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
